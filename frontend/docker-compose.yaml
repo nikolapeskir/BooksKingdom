@@ -1,0 +1,12 @@
+version: '3'
+services:
+  bookskingdom-frontend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8080"
+    container_name: bookskingdom-frontend
+    volumes:
+      - ./:/app
+      - /app/node_modules

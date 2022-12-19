@@ -1,0 +1,70 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\BookAuthorRequest;
+use App\Http\Resources\BookAuthorResource;
+use App\Models\BookAuthor;
+
+class BookAuthorController extends Controller
+{
+    /**
+     * Get all authors
+     **/
+    public function index()
+    {
+        return BookAuthorResource::collection(BookAuthor::all());
+    }
+
+    public function search()
+    {
+        $authors = BookAuthor::paginate(request('rowsPerPage'));
+
+        return BookAuthorResource::collection($authors);
+    }
+
+    /**
+     * Store a author
+     **/
+    public function store(BookAuthorRequest $request)
+    {
+        $bookAuthor = BookAuthor::create($request->validated());
+
+        return new BookAuthorResource($bookAuthor);
+    }
+
+    /**
+     * Get one author
+     **/
+    public function show(BookAuthor $bookAuthor)
+    {
+        return new BookAuthorResource($bookAuthor);
+    }
+
+    /**
+     * Update a author
+     **/
+    public function update(BookAuthorRequest $request, $id)
+    {
+        $bookAuthor = bookAuthor::findOrFail($id);
+
+        $bookAuthor->update($request->validated());
+
+        return new BookAuthorResource($bookAuthor);
+    }
+
+    /**
+     * Delete a author
+     **/
+    public function destroy($id)
+    {
+        $bookAuthor = bookAuthor::findOrFail($id);
+
+        $response = $bookAuthor->delete();
+
+        if ($response) {
+            return response()->noContent();
+        }
+    }
+}

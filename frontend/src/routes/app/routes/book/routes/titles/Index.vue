@@ -51,6 +51,18 @@ export default {
     fieldsInfo () {
       return [
         {
+          text: this.$t('fields.owner'),
+          name: 'owner',
+          details: false,
+          filterable: false,
+          sortable: false,
+          apiObject: {
+            name: 'owner',
+            functions: ['boolean'],
+          },
+          textMode: 'html',
+        },
+        {
           text: this.$t('fields.id'),
           name: 'id',
           details: false,
@@ -154,6 +166,7 @@ export default {
           name: 'published_at',
           multiedit: false,
           required: true,
+          filterable: false,
           apiObject: {
             name: 'published_at',
             functions: ['dateMinutesFromTimestamp'],
@@ -198,6 +211,7 @@ export default {
         detailsTitle: 'Book',
         fields: {
           id: 'Id',
+          owner: 'Owner',
           title: 'Title',
           author_id: 'Author',
           tags: 'Tags',
@@ -219,6 +233,7 @@ export default {
         detailsTitle: 'Book',
         fields: {
           id: 'Id',
+          owner: 'Owner',
           title: 'Title',
           author_id: 'Author',
           tags: 'Tags',

@@ -1,5 +1,8 @@
 BACKEND_DIR = '--directory=backend/laradock'
 FRONTEND_DIR = '--directory=frontend'
+BASE_URL = 'local.bookstore.io'
+BACKEND_URL = 'https://${BASE_URL}'
+FRONTEND_URL = 'http://${BASE_URL}:8082'
 
 be_up:
 	make ${BACKEND_DIR} up
@@ -26,6 +29,7 @@ down:
 up:
 	make be_up
 	make fe_up
+	@echo ${FRONTEND_URL}
 
 deploy:
 	@echo "Start local deploy"
@@ -38,6 +42,6 @@ install:
 	make ${FRONTEND_DIR} up
 	make ${BACKEND_DIR} install
 	@echo "Frontend url:"
-	@echo "http://local.bookstore.io:8082"
+	@echo ${FRONTEND_URL}
 	@echo "Backend url:"
-	@echo "https://local.bookstore.io"
+	@echo ${BACKEND_URL}

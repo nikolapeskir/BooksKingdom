@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\BookAuthorRequest;
 use App\Http\Resources\BookAuthorResource;
 use App\Models\BookAuthor;
+use App\Services\ParseSearchRequestService;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class BookAuthorController extends Controller
 {
@@ -19,7 +21,12 @@ class BookAuthorController extends Controller
 
     public function search()
     {
-        $authors = BookAuthor::paginate(request('rowsPerPage'));
+        request()->merge(ParseSearchRequestService::parse(request()));
+
+        $authors = QueryBuilder::for(BookAuthor::class)
+            ->allowedFilters('name')
+            ->allowedSorts('id', 'name', 'updated_at', 'created_at')
+            ->paginate(request('rowsPerPage'));
 
         return BookAuthorResource::collection($authors);
     }

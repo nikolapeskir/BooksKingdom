@@ -1,5 +1,5 @@
 export default {
-  url: 'https://local.bookstore.io',
+  url: 'https://local.bookskingdom.io',
   path: {
     prefix: 'api',
     storage: 'storage',

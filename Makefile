@@ -1,6 +1,6 @@
 BACKEND_DIR = '--directory=backend/laradock'
 FRONTEND_DIR = '--directory=frontend'
-BASE_URL = 'local.bookstore.io'
+BASE_URL = 'local.bookskingdom.io'
 BACKEND_URL = 'https://${BASE_URL}'
 FRONTEND_URL = 'http://${BASE_URL}:8082'
 

@@ -56,6 +56,8 @@ class BookAuthorController extends Controller
     {
         $bookAuthor = bookAuthor::findOrFail($id);
 
+        $this->authorize('update', $bookAuthor);
+
         $bookAuthor->update($request->validated());
 
         return new BookAuthorResource($bookAuthor);
@@ -67,6 +69,8 @@ class BookAuthorController extends Controller
     public function destroy($id)
     {
         $bookAuthor = bookAuthor::findOrFail($id);
+
+        $this->authorize('delete', $bookAuthor);
 
         $response = $bookAuthor->delete();
 

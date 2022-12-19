@@ -12,6 +12,16 @@ use Spatie\QueryBuilder\QueryBuilder;
 class BookController extends Controller
 {
     /**
+     * Create the controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Book::class, 'book');
+    }
+
+    /**
      * Get all books
      **/
     public function index()
@@ -56,6 +66,7 @@ class BookController extends Controller
     public function update(BookRequest $request, Book $book)
     {
         $book->update($request->validated());
+
         return new BookResource($book);
     }
 
@@ -65,6 +76,7 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         $book->delete();
+
         return response()->noContent();
     }
 }

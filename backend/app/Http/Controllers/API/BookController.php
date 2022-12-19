@@ -7,8 +7,6 @@ use App\Http\Requests\BookRequest;
 use App\Http\Resources\BookResource;
 use App\Models\Book;
 use App\Services\ParseSearchRequestService;
-use Spatie\QueryBuilder\AllowedFilter;
-use Spatie\QueryBuilder\AllowedSort;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class BookController extends Controller
@@ -27,8 +25,8 @@ class BookController extends Controller
 
         $books = QueryBuilder::for(Book::class)
             ->with('author')
-            ->allowedFilters('title', AllowedFilter::partial('author_id', 'author.name'))
-            ->allowedSorts('id', 'title', AllowedSort::field('author_name', 'author_id'), 'published_at', 'updated_at', 'created_at')
+            ->allowedFilters(Book::filterable())
+            ->allowedSorts(Book::sortable())
             ->paginate(request('rowsPerPage'));
 
         return BookResource::collection($books);

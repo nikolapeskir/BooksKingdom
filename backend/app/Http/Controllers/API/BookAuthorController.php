@@ -24,8 +24,8 @@ class BookAuthorController extends Controller
         request()->merge(ParseSearchRequestService::parse(request()));
 
         $authors = QueryBuilder::for(BookAuthor::class)
-            ->allowedFilters('name')
-            ->allowedSorts('id', 'name', 'updated_at', 'created_at')
+            ->allowedFilters(BookAuthor::filterable())
+            ->allowedSorts(BookAuthor::sortable())
             ->paginate(request('rowsPerPage'));
 
         return BookAuthorResource::collection($authors);

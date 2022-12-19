@@ -12,4 +12,21 @@ class BookAuthor extends Model
     use BelongsToUser;
 
     protected $guarded = [];
+
+    public static function filterable(): array
+    {
+        return [
+            'name',
+        ];
+    }
+
+    public static function sortable(): array
+    {
+        return [
+            'id',
+            'name',
+            'updated_at',
+            'created_at',
+        ];
+    }
 }

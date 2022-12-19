@@ -17,16 +17,22 @@
 * wait until backend & frontend fully booted
 * test out the app on http://local.bookskingdom.io:8082/
 ---
-###TO-DO Improvements
-####Backend
+##TO-DO Improvements
+###Backend
 * Create an endpoint for multiple-delete
 * Create an endpoint for multiple-update
 * Create an endpoint for user account update
 * Create tag system (Model,Controller,Routes,Policies)
 * Improve speed (Caching,Laravel Octane,Optimize queries)
-####Frontend
+###Frontend
 * Improve app messages & errors alerts
 * Sort & Filter by book Owner
+###Overall
+* PHPUnit tests
+* Frontend tests
+* Jenkins CI/CD setup
+* dev server deployment
+* production deployment
 ---
 
 ###Commands

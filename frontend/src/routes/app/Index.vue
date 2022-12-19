@@ -115,11 +115,11 @@ export default {
             text: 'book.tags',
             route: '/tags',
           },
-          {
-            icon: 'style',
-            text: 'book.bookTags',
-            route: '/book-tags',
-          },
+          // {
+          //   icon: 'style',
+          //   text: 'book.bookTags',
+          //   route: '/book-tags',
+          // },
         ],
       },
     ],

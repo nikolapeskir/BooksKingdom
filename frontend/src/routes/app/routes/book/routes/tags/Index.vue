@@ -17,12 +17,9 @@ import Crud from '@/utils/crud/components/Crud.vue'
 export default {
   data () {
     return {
-      prefix: 'crud/book',
+      prefix: null,
       path: 'tags',
-      paths: {
-        st: 'book/tags',
-        u: 'book/tags',
-      },
+      paths: {},
       pageTitle: 'book.tags',
     }
   },

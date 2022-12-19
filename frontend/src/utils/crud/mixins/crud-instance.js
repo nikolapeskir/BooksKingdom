@@ -127,7 +127,7 @@ export default {
     async destroy (id) {
       if (
         await this.findRefByName('confirm').open(
-          'Confirm Delete',
+          this.$t('global.alerts.confirmDelete'),
           this.$t('global.alerts.confirm')
         )
       ) {
@@ -192,7 +192,7 @@ export default {
     async destroySelected () {
       if (await this.checkSelected() &&
         await this.findRefByName('confirm').open(
-          'Confirm Multiple Delete',
+          this.$t('global.alerts.confirmMultipleDelete'),
           this.$t('global.datatable.confirm')
         )
       ) {

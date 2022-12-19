@@ -10,7 +10,7 @@ export default {
       text: 'Spanish',
     },
   ],
-  defaultLocale: 'en',
+  defaultLocale: 'es',
   iconfont: 'md',
   primaryTheme: 'dark',
   secondaryTheme: 'dark',

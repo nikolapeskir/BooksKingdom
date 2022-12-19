@@ -1,12 +1,12 @@
 export default {
   home: {
-    name: 'Home page',
+    name: 'Página de inicio',
   },
   book: {
-    name: 'Books',
-    authors: 'Authors',
-    tags: 'Tags',
-    titles: 'Titles',
-    bookTags: 'Books Tags',
+    name: 'Libros',
+    authors: 'Autores',
+    tags: 'Etiquetas',
+    titles: 'Títulos',
+    bookTags: 'Etiquetas de Libros',
   },
 }

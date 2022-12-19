@@ -17,11 +17,9 @@ import Crud from '@/utils/crud/components/Crud.vue'
 export default {
   data () {
     return {
-      prefix: 'crud/book',
+      prefix: null,
       path: 'book-tags',
-      paths: {
-        i: 'book/book-tags',
-      },
+      paths: {},
       pageTitle: 'book.bookTags',
     }
   },
@@ -35,7 +33,7 @@ export default {
         },
         {
           type: 'select',
-          url: 'crud/book/titles',
+          url: 'book/titles',
           list: {
             value: 'id',
             text: 'title',
@@ -74,7 +72,7 @@ export default {
         },
         {
           type: 'select',
-          url: 'crud/book/tags',
+          url: 'book/tags',
           list: {
             value: 'id',
             text: 'name',

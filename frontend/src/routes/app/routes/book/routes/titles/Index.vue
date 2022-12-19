@@ -54,7 +54,6 @@ export default {
           text: this.$t('fields.owner'),
           name: 'owner',
           details: false,
-          filterable: false,
           sortable: false,
           apiObject: {
             name: 'owner',
@@ -208,23 +207,23 @@ export default {
   i18n: {
     messages: {
       es: {
-        detailsTitle: 'Book',
+        detailsTitle: 'Libro',
         fields: {
           id: 'Id',
-          owner: 'Owner',
-          title: 'Title',
-          author_id: 'Author',
-          tags: 'Tags',
-          user: 'Author',
-          publishedAt: 'Published at',
-          createdAt: 'Created at',
-          updatedAt: 'Updated at',
+          owner: 'Propietario',
+          title: 'Título',
+          author_id: 'Autor',
+          tags: 'Etiquetas',
+          user: 'Autor',
+          publishedAt: 'Publicado en',
+          createdAt: 'Creado en',
+          updatedAt: 'Actualizado en',
         },
         itemElements: {
           bookTags: {
-            title: 'Tags',
+            title: 'Etiquetas',
             headers: {
-              tag: 'Tag',
+              tag: 'Etiqueta',
             },
           },
         },

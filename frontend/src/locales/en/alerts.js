@@ -13,5 +13,7 @@ export default {
   addError: 'Error! Add unsuccessful',
   removed: 'Removed',
   removeError: 'Error! Remove unsuccessful',
+  confirmDelete: 'Confirm Delete',
+  confirmMultipleDelete: 'Confirm multiple Delete',
   confirm: 'Are you sure?',
 }

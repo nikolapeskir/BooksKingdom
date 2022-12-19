@@ -1,6 +1,6 @@
 export default {
-  multipleUpdateTitle: 'Multiple records update',
-  title: 'Details',
+  multipleUpdateTitle: 'Actualización de registros múltiples',
+  title: 'Detalles',
   rules: {
     required: 'Field is required',
     atLeast: 'Field must be at least',
@@ -18,14 +18,14 @@ export default {
     storeError: 'Error! Store unsuccessful',
   },
   buttons: {
-    create: 'Create',
-    modify: 'Modify',
-    modifySelected: 'Modify selected records',
-    close: 'Close',
+    create: 'Crear',
+    modify: 'Modificar',
+    modifySelected: 'Modificar registros seleccionados',
+    close: 'Cerrar',
   },
   files: {
-    upload: 'Upload file',
+    upload: 'Subir archivo',
     show: 'Show',
-    download: 'Download',
+    download: 'Descargar',
   },
 }
